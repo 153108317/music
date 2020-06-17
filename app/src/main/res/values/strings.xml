@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">作业</string>
+    <string name="hint_usename">用户名</string>
+    <string name="hint_password">密码</string>
+    <string name="login_title">登录</string>
+    <string name="myprovider">com.example.zuoye.MyContentProvider</string>
+</resources>

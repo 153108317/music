@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.zuoye">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name="com.example.zuoye.MusicActivity">
+
+        </activity>
+        <activity android:name="com.example.zuoye.SaveInformationActivity" />
+        <activity android:name="com.example.zuoye.RegisterActivity" />
+        <activity android:name="com.example.zuoye.LoginActivity" >
+
+        </activity>
+        <activity android:name="com.example.zuoye.ListActivity">
+
+        </activity>
+        <activity android:name="com.example.zuoye.PlayActivity" />
+        <activity android:name=".SelectActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.example.zuoye.MusicService"
+            android:enabled="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.RESPOND_VIA_MESSAGE"  />
+            </intent-filter>
+        </service>
+        <provider
+            android:exported="true"
+            android:authorities="@string/myprovider"
+            android:name="com.example.zuoye.MyContentProvider"/>
+    </application>
+
+</manifest>
