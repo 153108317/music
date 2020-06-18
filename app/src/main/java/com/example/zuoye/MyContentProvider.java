@@ -48,11 +48,9 @@ public class MyContentProvider extends ContentProvider {
         if (!hasData) {
             sqLiteDatabase.beginTransaction();
             ContentValues c = new ContentValues();
-            c.put("name", "少年");
-            sqLiteDatabase.insert(DbHelp.TABLE_NAME, null, c);
-            c.put("name", "不才");
+
             c.put("name", "Feder,Alex Aiono - Lordly");
-            sqLiteDatabase.insert(DbHelp.TABLE_NAME, null, c);
+
 
             sqLiteDatabase.insert(DbHelp.TABLE_NAME, null, c);
             sqLiteDatabase.setTransactionSuccessful();

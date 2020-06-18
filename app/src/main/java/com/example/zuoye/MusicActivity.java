@@ -43,14 +43,15 @@ public class MusicActivity extends AppCompatActivity {
             author.setText("" );
         }else {
             title.setText("" + name);
-            author.setText("" + sauthor);
+            author.setText("" );
         }
 
         if (name.equals("Feder,Alex Aiono - Lordly")) {
             MusicService.musics = new String[]{"Feder,Alex Aiono - Lordly.mp3"};
-        } else {
-            MusicService.musics = new String[]{"bucai1.mp3"};
         }
+//        else {
+//            MusicService.musics = new String[]{"bucai1.mp3"};
+//        }
         //创建一个BroardCast Receiver
         Intent actionIntent = new Intent(this, MusicService.class);
         actionIntent.setAction("android.intent.action.RESPOND_VIA_MESSAGE");
@@ -152,5 +153,14 @@ public class MusicActivity extends AppCompatActivity {
             //把点击状态传送到Service 类里面的广播去处理我们的播放事件
             MusicActivity.this.sendBroadcast(intent);
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Intent intent = new Intent(MusicBoxConstant.ACTION_CTL);
+        intent.putExtra("control", 2);
+        intent.putExtra("status", next_status);
+        MusicActivity.this.sendBroadcast(intent);
     }
 }
