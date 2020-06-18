@@ -38,18 +38,22 @@ public class MyContentProvider extends ContentProvider {
         boolean hasData = false;
         while (cursor.moveToNext()) {
             String name = cursor.getString(cursor.getColumnIndex("name"));
-            if (name.equals("少年") || name.equals("不才")) {
+            if (name.equals("Feder,Alex Aiono - Lordly")) {
                 hasData = true;
                 cursor.close();
                 break;
             }
         }
+//        hasData=false;
         if (!hasData) {
             sqLiteDatabase.beginTransaction();
             ContentValues c = new ContentValues();
             c.put("name", "少年");
             sqLiteDatabase.insert(DbHelp.TABLE_NAME, null, c);
             c.put("name", "不才");
+            c.put("name", "Feder,Alex Aiono - Lordly");
+            sqLiteDatabase.insert(DbHelp.TABLE_NAME, null, c);
+
             sqLiteDatabase.insert(DbHelp.TABLE_NAME, null, c);
             sqLiteDatabase.setTransactionSuccessful();
             sqLiteDatabase.endTransaction();

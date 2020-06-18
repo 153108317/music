@@ -46,8 +46,8 @@ public class MusicActivity extends AppCompatActivity {
             author.setText("" + sauthor);
         }
 
-        if (name.equals("少年")) {
-            MusicService.musics = new String[]{"shaonian.mp3"};
+        if (name.equals("Feder,Alex Aiono - Lordly")) {
+            MusicService.musics = new String[]{"Feder,Alex Aiono - Lordly.mp3"};
         } else {
             MusicService.musics = new String[]{"bucai1.mp3"};
         }

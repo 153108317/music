@@ -21,7 +21,7 @@ public class MusicService extends Service {
         private int current = 0;
 
 
-    public static  String[] musics = new String[]{"shaonian.mp3"};
+    public static  String[] musics = new String[]{"Feder,Alex Aiono - Lordly.mp3"};
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
