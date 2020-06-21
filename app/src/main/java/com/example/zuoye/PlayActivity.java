@@ -23,7 +23,6 @@ public class PlayActivity extends AppCompatActivity {
     private void initView(){
         videoView = findViewById(R.id.videoview);
         String uri = "android.resource://" + getPackageName() + "/" + R.raw.m3;
-//        videoView.setVideoPath(videoUrl);
         videoView.setVideoURI(Uri.parse(uri));
         videoView.setMediaController(new MediaController(this));
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
